@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ContestantsDetails"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true">
+            <RelativeLayout
+                android:id="@+id/ralativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image_view_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@mipmap/ic_launcher" />
+                <TextView
+                    android:id="@+id/text_name_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Contestant Name"
+                    android:textSize="30sp"
+                    android:layout_below="@id/image_view_detail"/>
+
+                <TextView
+                    android:id="@+id/verbage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Voting rate 0.50 per SMS. T and C Apply "
+                    android:textSize="12sp"
+                    android:layout_below="@id/text_name_detail"/>
+
+
+                <TextView
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/paying_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Mobile Money Number"
+                    android:textSize="14sp"
+                    android:layout_below="@id/verbage"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:hint="Enter telephone number"
+                    android:textColorHint="@color/design_default_color_primary_dark"
+                    android:layout_below="@id/paying_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingLeft="20dp"
+                    android:id="@+id/bill_number"
+                    android:background="@android:color/darker_gray"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:maxLength="10"/>
+
+                <TextView
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/tv_network"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Mobile Money Service"
+                    android:textSize="14sp"
+                    android:layout_below="@id/bill_number"/>
+
+                <Spinner
+                    android:layout_marginTop="5dp"
+                    android:textColorHint="@color/design_default_color_primary_dark"
+                    android:layout_below="@id/tv_network"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingLeft="20dp"
+                    android:id="@+id/network"
+                    android:background="@android:color/darker_gray"
+                    android:ems="10"
+                    android:entries="@array/hubtel_momo_channels"
+                    />
+
+                <TextView
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/network"
+                    android:id="@+id/voting_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Number of Votes"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:textColorHint="@color/design_default_color_primary_dark"
+                    android:hint="Enter number of votes"
+                    android:layout_below="@id/voting_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingLeft="20dp"
+                    android:id="@+id/vote_number"
+                    android:background="@android:color/darker_gray"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"/>
+                <TextView
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/vote_number"
+                    android:id="@+id/total_amount0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Total amount to pay is (GH):"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/holo_red_light"
+                    android:layout_toRightOf="@id/total_amount0"
+                    android:layout_alignRight="@id/vote_number"
+                    android:layout_below="@id/vote_number"
+                    android:id="@+id/total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text=""
+                    android:textSize="12sp"/>
+                <Button
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/total_amount0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/pay"
+
+                    android:background="@color/wallet_link_text_light"
+                    android:text="VOTE"
+                    />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+</LinearLayout>
